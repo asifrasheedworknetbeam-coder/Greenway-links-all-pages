@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact Greenway Links | Logistics &amp; Fulfilment Enquiries</title>
+<meta name="description" content="Get in touch with Greenway Links about industrial logistics, manufacturing operational support, warehousing, container haulage, manpower and fulfilment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap">
+<script src="image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#fff;font-family:'Poppins',sans-serif;color:#141416;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+a:hover{color:#82C441}
+p,h1,h2,h3{margin:0}
+h1,h2,h3,h4,h5,h6,input,select,textarea,button{font-family:'Poppins',sans-serif}
+img{display:block;max-width:100%}
+</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;background:#fff">
+<header style="position:fixed;top:20px;left:0;right:0;z-index:50;padding:0 clamp(20px,4vw,56px);pointer-events:none;font-family:'Poppins',sans-serif">
+  <div style="position:relative;max-width:1400px;margin:0 auto;height:64px;padding:0 12px 0 32px;border-radius:999px;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(20,20,22,.04);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:24px;pointer-events:auto">
+    <a href="index.html" aria-label="Greenway Links" style="display:flex;align-items:center;justify-self:start"><img src="media/greenway-logo.webp" alt="Greenway Links" style="height:34px;width:auto;display:block"></a>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;justify-content:center;justify-self:center;gap:40px;color:#141416">
+        <a href="index.html" style="font-size:17px;font-weight:500;color:{{ homeColor }}" style-hover="color:#82C441">Home</a>
+        <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position:relative;display:flex;align-items:center;height:64px">
+          <a href="services.dc.html" style="display:inline-flex;align-items:center;gap:6px;font-size:17px;font-weight:500;color:{{ servicesColor }}" style-hover="color:#82C441">Services<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:60px;left:50%;transform:translateX(-50%);width:340px;padding:10px;border-radius:24px;background:#fff;box-shadow:0 24px 64px rgba(11,27,63,.14);display:flex;flex-direction:column;gap:2px">
+              <sc-for list="{{ menu }}" as="m" hint-placeholder-count="7">
+                <a href="{{ m.href }}" style="display:block;padding:11px 16px 11px {{ m.pad }};border-radius:14px;font-size:{{ m.size }};font-weight:{{ m.weight }};line-height:1.35;color:{{ m.color }}" style-hover="background:#EEF7E4;color:#0b0b0c">{{ m.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="about-us.dc.html" style="font-size:17px;font-weight:500;color:{{ aboutColor }}" style-hover="color:#82C441">About Us</a>
+        <a href="contact-us.dc.html" style="font-size:17px;font-weight:500;color:{{ contactColor }}" style-hover="color:#82C441">Contact Us</a>
+      </nav>
+      <a href="contact-us.dc.html" style="justify-self:end;display:inline-flex;align-items:center;height:40px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);color:#fff;font-weight:600;font-size:12.5px;white-space:nowrap" style-hover="background:linear-gradient(90deg,#2A4488 0%,#3450AA 100%);color:#fff">Contact Us</a>
+    </sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+      <span></span>
+      <button onClick="{{ toggleMobile }}" aria-label="Menu" style="justify-self:end;width:44px;height:44px;border-radius:999px;border:0;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer"><i style="width:16px;height:2px;border-radius:2px;background:#fff"></i><i style="width:16px;height:2px;border-radius:2px;background:#fff"></i><i style="width:16px;height:2px;border-radius:2px;background:#fff"></i></button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1400px;margin:10px auto 0;padding:10px;border-radius:24px;background:#fff;box-shadow:0 24px 64px rgba(11,27,63,.14);display:flex;flex-direction:column;gap:2px;pointer-events:auto;max-height:calc(100vh - 120px);overflow:auto">
+      <sc-for list="{{ mobileLinks }}" as="m" hint-placeholder-count="10">
+        <a href="{{ m.href }}" style="display:block;padding:12px 16px 12px {{ m.pad }};border-radius:14px;font-size:{{ m.size }};font-weight:{{ m.weight }};line-height:1.35;color:{{ m.color }}" style-hover="background:#EEF7E4;color:#0b0b0c">{{ m.label }}</a>
+      </sc-for>
+    </div>
+  </sc-if>
+</header>
+<section data-screen-label="01 Banner" style="position:relative;min-height:clamp(560px,76vh,760px);display:flex;overflow:hidden;background:#0B1B3F;color:#fff;font-family:'Poppins',sans-serif">
+  <div style="position:absolute;inset:0"><image-slot id="ct-banner" src="media/container-crane.webp" shape="rect" placeholder="Banner image"></image-slot></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,11,12,.5) 0%,rgba(11,11,12,.3) 38%,rgba(8,22,60,.85) 100%)"></div>
+  <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:180px clamp(20px,4vw,56px) clamp(64px,7vw,104px);pointer-events:none">
+    <div style="width:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:28px">
+      <nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px;font-weight:500;pointer-events:auto">
+        <a href="index.html" style="color:#fff" style-hover="color:#82C441">Home</a><span style="color:rgba(255,255,255,.6)">/</span>
+        <span style="color:#82C441">Contact Us</span>
+      </nav>
+      <h1 style="max-width:1040px;font-weight:600;font-size:clamp(36px,4.82vw,73px);line-height:1.08;letter-spacing:-0.01em;color:#fff;text-wrap:balance">Let’s Talk About Your Operation.</h1>
+      <p style="max-width:700px;font-size:16px;line-height:1.65;color:#fff;text-wrap:pretty">Tell us what needs to move, where it needs to go and what your operation requires. We’ll help you find a practical way forward.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Get in touch" style="padding:clamp(92px,9.6vw,100px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px;align-items:stretch">
+    <div style="position:relative;overflow:hidden;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);color:#fff;border-radius:28px;padding:clamp(36px,5vw,64px);display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+      <div style="position:absolute;right:-140px;bottom:-140px;width:380px;height:380px;border-radius:999px;border:1px solid rgba(255,255,255,.1);pointer-events:none"></div>
+      <div style="position:absolute;right:-70px;bottom:-70px;width:240px;height:240px;border-radius:999px;border:1px solid rgba(255,255,255,.1);pointer-events:none"></div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:24px">
+        <h2 style="font-weight:600;font-size:clamp(30.5px,3.78vw,50px);line-height:1.08;letter-spacing:-0.01em;color:#fff">Get in <span style="color:#82C441">touch</span></h2>
+        <p style="max-width:480px;font-size:16px;line-height:1.65;color:#D6DDEC">Whether you need industrial transport, on-site manufacturing support, warehousing, manpower or fulfilment services, our team is ready to discuss your requirements.</p>
+      </div>
+      <div style="position:relative;flex:1 1 auto;min-height:240px;border-radius:20px;overflow:hidden;background:#0B1B3F"><div style="position:absolute;inset:0"><image-slot id="ct-office" src="media/port-team.png" shape="rect" placeholder="Team or office image"></image-slot></div></div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.07)">
+          <span style="flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#20366E;display:inline-flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+          <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:500;font-size:13.5px;color:#A9B4CF">Head office</div><div style="font-size:16px;line-height:1.45;color:#fff">Greenway Links Sdn Bhd<br>Shah Alam, Selangor, Malaysia</div></div>
+        </div>
+        <a href="mailto:info@gwl.com.my" style="display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.07);color:#fff;transition:background 150ms" style-hover="background:rgba(255,255,255,.13);color:#fff">
+          <span style="flex:0 0 auto;width:40px;height:40px;border-radius:12px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#20366E;display:inline-flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
+          <div style="display:flex;flex-direction:column;gap:3px"><div style="font-weight:500;font-size:13.5px;color:#A9B4CF">Enquiries · General enquiries</div><div style="font-size:16px;color:#fff">info@gwl.com.my</div></div>
+        </a>
+      </div>
+    </div>
+    <div style="background:#fff;border:1px solid #E6E9F0;border-radius:28px;padding:clamp(32px,4.4vw,64px);display:flex;flex-direction:column;justify-content:center">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:28px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-weight:600;font-size:clamp(18.5px,1.5vw,21px);letter-spacing:-0.01em;color:#0b0b0c">Let’s explore the right fit for your business.</div>
+            <p style="font-size:16px;line-height:1.6;color:#5c5c63">Share the details of your requirements and our team can take the conversation from there.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(220px,calc((100% - 16px) / 2)),1fr));gap:16px">
+            <sc-for list="{{ fields }}" as="f" hint-placeholder-count="4">
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="font-weight:600;font-size:14px;color:#20366E">{{ f.label }}</span>
+                <input type="{{ f.type }}" name="{{ f.key }}" value="{{ f.value }}" onChange="{{ f.onChange }}" placeholder="{{ f.placeholder }}" style="height:48px;padding:0 16px;border-radius:12px;border:1px solid {{ f.border }};background:#F5F7FA;font-size:15.5px;color:#20366E;outline:0;width:100%;transition:border-color 150ms,box-shadow 150ms,background 150ms" style-focus="background:#fff;border-color:#82C441;box-shadow:0 0 0 4px rgba(130,196,65,.18)">
+                <sc-if value="{{ f.hasError }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#D92D20">{{ f.error }}</span></sc-if>
+              </label>
+            </sc-for>
+            <label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:8px">
+              <span style="font-weight:600;font-size:14px;color:#20366E">Service of interest</span>
+              <select value="{{ service }}" onChange="{{ onService }}" style="height:48px;padding:0 16px;border-radius:12px;border:1px solid #E6E9F0;background:#F5F7FA;font-size:15.5px;color:#20366E;outline:0;width:100%;cursor:pointer" style-focus="background:#fff;border-color:#82C441;box-shadow:0 0 0 4px rgba(130,196,65,.18)">
+                <sc-for list="{{ serviceOptions }}" as="o" hint-placeholder-count="8"><option value="{{ o }}">{{ o }}</option></sc-for>
+              </select>
+            </label>
+            <sc-for list="{{ fields2 }}" as="f" hint-placeholder-count="3">
+              <label style="grid-column:{{ f.span }};display:flex;flex-direction:column;gap:8px">
+                <span style="font-weight:600;font-size:14px;color:#20366E">{{ f.label }}</span>
+                <input type="text" name="{{ f.key }}" value="{{ f.value }}" onChange="{{ f.onChange }}" style="height:48px;padding:0 16px;border-radius:12px;border:1px solid #E6E9F0;background:#F5F7FA;font-size:15.5px;color:#20366E;outline:0;width:100%;transition:border-color 150ms,box-shadow 150ms,background 150ms" style-focus="background:#fff;border-color:#82C441;box-shadow:0 0 0 4px rgba(130,196,65,.18)">
+              </label>
+            </sc-for>
+            <label style="grid-column:1 / -1;display:flex;flex-direction:column;gap:8px">
+              <span style="font-weight:600;font-size:14px;color:#20366E">Message *</span>
+              <textarea rows="4" name="message" value="{{ message }}" onChange="{{ onMessage }}" placeholder="Tell us about your goods, routes, production requirements, storage needs, workforce or order fulfilment. Add any relevant volumes, locations and preferred start date." style="min-height:128px;padding:14px 16px;border-radius:12px;border:1px solid {{ messageBorder }};background:#F5F7FA;font-size:15.5px;line-height:1.55;color:#20366E;outline:0;width:100%;resize:vertical" style-focus="background:#fff;border-color:#82C441;box-shadow:0 0 0 4px rgba(130,196,65,.18)"></textarea>
+              <sc-if value="{{ messageHasError }}" hint-placeholder-val="{{ false }}"><span style="font-size:13px;color:#D92D20">{{ messageError }}</span></sc-if>
+            </label>
+          </div>
+          <button onClick="{{ send }}" style="height:52px;width:100%;border-radius:12px;border:0;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);color:#fff;font-weight:500;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px" style-hover="background:linear-gradient(90deg,#2A4488 0%,#3450AA 100%)">Send Enquiry <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:48px 0">
+          <span style="width:60px;height:60px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#20366E;display:inline-flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="M20 6 9 17l-5-5"></path></svg></span>
+          <div style="font-weight:600;font-size:21px;letter-spacing:-0.01em;color:#0b0b0c">Enquiry sent.</div>
+          <p style="max-width:360px;font-size:16px;line-height:1.55;color:#5c5c63">Your email app has opened with the enquiry addressed to info@gwl.com.my.</p>
+          <button onClick="{{ reset }}" style="margin-top:6px;height:42px;padding:0 22px;border-radius:12px;border:1px solid #E6E9F0;background:#fff;color:#20366E;font-size:14.5px;cursor:pointer">Send another</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="background:#F2F2F2;padding:clamp(64px,7vw,96px) clamp(20px,4vw,56px) 0;font-family:'Poppins',sans-serif">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="padding:0 0 clamp(48px,5vw,64px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:360px">
+        <a href="index.html" aria-label="Greenway Links" style="display:inline-flex;align-self:flex-start"><img src="media/greenway-logo.webp" alt="Greenway Links" style="height:44px;width:auto;display:block"></a>
+        <p style="font-size:16px;line-height:1.6;color:#5c5c63">Connecting Every Links in Your Supply Chain.</p>
+        <p style="font-size:16px;line-height:1.6;color:#5c5c63">Shah Alam, Selangor, Malaysia<br><a href="mailto:info@gwl.com.my" style="color:#20366E" style-hover="color:#82C441">info@gwl.com.my</a></p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:40px clamp(40px,6vw,96px)">
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:150px">
+          <div style="font-weight:500;font-size:15.5px;color:#0b0b0c">Services</div>
+          <a href="contract-logistics.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Contract Logistics</a>
+          <a href="industrial-logistics.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Industrial Logistics</a>
+          <a href="manufacturing-operations.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Manufacturing Operations &amp; Support</a>
+          <a href="warehousing.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Warehousing &amp; Storage</a>
+          <a href="container-haulage.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Container Haulage</a>
+          <a href="manpower.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Manpower Solutions</a>
+          <a href="fulfilment.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Fulfilment Solutions</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:150px">
+          <div style="font-weight:500;font-size:15.5px;color:#0b0b0c">Company</div>
+          <a href="about-us.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">About Us</a>
+          <a href="contact-us.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Contact Us</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:150px">
+          <div style="font-weight:500;font-size:15.5px;color:#0b0b0c">Legal</div>
+          <a href="#" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Privacy Policy</a>
+          <a href="#" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Terms</a>
+          <a href="#" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding:24px 0 32px;border-top:1px solid #DADDE3;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#7a7a82">
+      <span>© 2026 Greenway Links Sdn. Bhd.</span>
+      <span>Industrial Logistics &amp; Fulfilment Services</span>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const GL_MENU = [
+  ['Contract Logistics', 'contract-logistics.dc.html', 0],
+  ['Industrial Logistics', 'industrial-logistics.dc.html', 1],
+  ['Manufacturing Operations & Support', 'manufacturing-operations.dc.html', 1],
+  ['Warehousing & Storage', 'warehousing.dc.html', 0],
+  ['Container Haulage', 'container-haulage.dc.html', 0],
+  ['Manpower Solutions', 'manpower.dc.html', 0],
+  ['Fulfilment Solutions', 'fulfilment.dc.html', 0]
+];
+const GL_ACTIVE = 'contact', GL_CURRENT = 'contact-us.dc.html';
+function glHeader(cmp) {
+  const s = cmp.state;
+  const c = k => GL_ACTIVE === k ? '#20366E' : '#141416';
+  const item = ([label, href, lvl]) => ({ label, href, pad: (16 + lvl * 16) + 'px', size: lvl ? '14.5px' : '15.5px', weight: lvl ? 400 : 500, color: href === GL_CURRENT ? '#20366E' : (lvl ? '#5c5c63' : '#141416') });
+  const desktop = s.glW >= 980;
+  const mob = [['Home', 'index.html', 0], ['Services', 'services.dc.html', 0]].concat(GL_MENU.map(m => [m[0], m[1], m[2] + 1]), [['About Us', 'about-us.dc.html', 0], ['Contact Us', 'contact-us.dc.html', 0]]);
+  return {
+    desktop, mobile: !desktop, menuOpen: s.glOpen, mobileOpen: !desktop && s.glMob,
+    homeColor: c('home'), servicesColor: c('services'), aboutColor: c('about'), contactColor: c('contact'),
+    menu: GL_MENU.map(item), mobileLinks: mob.map(item),
+    openMenu: () => cmp.setState({ glOpen: true }), closeMenu: () => cmp.setState({ glOpen: false }),
+    toggleMobile: () => cmp.setState(x => ({ glMob: !x.glMob }))
+  };
+}
+const FIELDS = [
+  { key: 'name', label: 'Name *', type: 'text', placeholder: 'Your full name' },
+  { key: 'company', label: 'Company *', type: 'text', placeholder: 'Company name' },
+  { key: 'email', label: 'Email *', type: 'email', placeholder: 'name@company.com' },
+  { key: 'phone', label: 'Phone', type: 'tel', placeholder: '+60' }
+];
+const FIELDS2 = [
+  { key: 'location', label: 'Operating location(s)', span: 'auto' },
+  { key: 'goods', label: 'Type of goods or activity', span: 'auto' },
+  { key: 'volume', label: 'Required service / estimated volume', span: '1 / -1' }
+];
+const SERVICE_OPTIONS = ['Contract Logistics', 'Industrial Logistics', 'Manufacturing Operations and Support', 'Warehousing', 'Container Haulage', 'Manpower Solutions', 'Fulfilment Solutions', 'Other'];
+const EMPTY = { name: '', company: '', email: '', phone: '', location: '', goods: '', volume: '', message: '', service: 'Contract Logistics' };
+
+class Component extends DCLogic {
+  state = { glW: typeof window !== 'undefined' ? window.innerWidth : 1400, glOpen: false, glMob: false, sent: false, form: Object.assign({}, EMPTY), errors: {} };
+  componentWillUnmount() { window.removeEventListener('resize', this.glR); }
+  componentDidMount() {
+    this.glR = () => this.setState({ glW: window.innerWidth }); window.addEventListener('resize', this.glR); this.glR();
+    try {
+      const s = new URLSearchParams(window.location.search).get('service');
+      if (s && SERVICE_OPTIONS.indexOf(s) > -1) this.setField('service', s);
+    } catch (e) {}
+  }
+  setField(k, v) { this.setState(s => { const errors = Object.assign({}, s.errors); delete errors[k]; return { form: Object.assign({}, s.form, { [k]: v }), errors }; }); }
+  validate(f) {
+    const e = {};
+    if (!f.name.trim()) e.name = 'Please enter your name.';
+    if (!f.company.trim()) e.company = 'Please enter your company.';
+    if (!f.email.trim()) e.email = 'Please enter your email.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) e.email = 'Please enter a valid email.';
+    if (!f.message.trim()) e.message = 'Please add a message.';
+    return e;
+  }
+  submit() {
+    const f = this.state.form; const e = this.validate(f);
+    if (Object.keys(e).length) { this.setState({ errors: e }); return; }
+    const lines = [['Name', f.name], ['Company', f.company], ['Email', f.email], ['Phone', f.phone], ['Service of interest', f.service], ['Operating location(s)', f.location], ['Type of goods or activity', f.goods], ['Required service / estimated volume', f.volume], ['', ''], ['Message', f.message]];
+    const body = lines.map(([k, v]) => k ? k + ': ' + (v || '-') : '').join('\n');
+    const url = 'mailto:info@gwl.com.my?subject=' + encodeURIComponent('Website enquiry - ' + f.company) + '&body=' + encodeURIComponent(body);
+    try { window.open(url, '_blank'); } catch (err) {}
+    this.setState({ sent: true });
+  }
+  renderVals() {
+    const st = this.state;
+    return Object.assign(glHeader(this), {
+      fields: FIELDS.map(fd => { const err = st.errors[fd.key]; return Object.assign({}, fd, {
+        value: st.form[fd.key], onChange: (ev) => this.setField(fd.key, ev.target.value),
+        hasError: !!err, error: err || '', border: err ? '#D92D20' : '#E6E9F0' }); }),
+      fields2: FIELDS2.map(fd => Object.assign({}, fd, { value: st.form[fd.key], onChange: (ev) => this.setField(fd.key, ev.target.value) })),
+      serviceOptions: SERVICE_OPTIONS,
+      service: st.form.service, onService: (ev) => this.setField('service', ev.target.value),
+      message: st.form.message, onMessage: (ev) => this.setField('message', ev.target.value),
+      messageHasError: !!st.errors.message, messageError: st.errors.message || '',
+      messageBorder: st.errors.message ? '#D92D20' : '#E6E9F0',
+      sent: st.sent, notSent: !st.sent, send: () => this.submit(),
+      reset: () => this.setState({ sent: false, form: Object.assign({}, EMPTY), errors: {} })
+    });
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Container Haulage Services Malaysia | Greenway Links</title>
+<meta name="description" content="Reliable container haulage services in Port Klang and Klang Valley, supporting import, export and container transportation needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap">
+<script src="image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+html,body{margin:0;background:#fff;font-family:'Poppins',sans-serif;color:#141416;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+a:hover{color:#82C441}
+p,h1,h2,h3{margin:0}
+h1,h2,h3,h4,h5,h6,input,select,textarea,button{font-family:'Poppins',sans-serif}
+img{display:block;max-width:100%}
+</style>
+</helmet>
+<div style="font-family:'Poppins',sans-serif;background:#fff">
+<header style="position:fixed;top:20px;left:0;right:0;z-index:50;padding:0 clamp(20px,4vw,56px);pointer-events:none;font-family:'Poppins',sans-serif">
+  <div style="position:relative;max-width:1400px;margin:0 auto;height:64px;padding:0 12px 0 32px;border-radius:999px;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(20,20,22,.04);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:24px;pointer-events:auto">
+    <a href="index.html" aria-label="Greenway Links" style="display:flex;align-items:center;justify-self:start"><img src="media/greenway-logo.webp" alt="Greenway Links" style="height:34px;width:auto;display:block"></a>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;justify-content:center;justify-self:center;gap:40px;color:#141416">
+        <a href="index.html" style="font-size:17px;font-weight:500;color:{{ homeColor }}" style-hover="color:#82C441">Home</a>
+        <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position:relative;display:flex;align-items:center;height:64px">
+          <a href="services.dc.html" style="display:inline-flex;align-items:center;gap:6px;font-size:17px;font-weight:500;color:{{ servicesColor }}" style-hover="color:#82C441">Services<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="m6 9 6 6 6-6"></path></svg></a>
+          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:60px;left:50%;transform:translateX(-50%);width:340px;padding:10px;border-radius:24px;background:#fff;box-shadow:0 24px 64px rgba(11,27,63,.14);display:flex;flex-direction:column;gap:2px">
+              <sc-for list="{{ menu }}" as="m" hint-placeholder-count="7">
+                <a href="{{ m.href }}" style="display:block;padding:11px 16px 11px {{ m.pad }};border-radius:14px;font-size:{{ m.size }};font-weight:{{ m.weight }};line-height:1.35;color:{{ m.color }}" style-hover="background:#EEF7E4;color:#0b0b0c">{{ m.label }}</a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="about-us.dc.html" style="font-size:17px;font-weight:500;color:{{ aboutColor }}" style-hover="color:#82C441">About Us</a>
+        <a href="contact-us.dc.html" style="font-size:17px;font-weight:500;color:{{ contactColor }}" style-hover="color:#82C441">Contact Us</a>
+      </nav>
+      <a href="contact-us.dc.html" style="justify-self:end;display:inline-flex;align-items:center;height:40px;padding:0 22px;border-radius:999px;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);color:#fff;font-weight:600;font-size:12.5px;white-space:nowrap" style-hover="background:linear-gradient(90deg,#2A4488 0%,#3450AA 100%);color:#fff">Contact Us</a>
+    </sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+      <span></span>
+      <button onClick="{{ toggleMobile }}" aria-label="Menu" style="justify-self:end;width:44px;height:44px;border-radius:999px;border:0;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer"><i style="width:16px;height:2px;border-radius:2px;background:#fff"></i><i style="width:16px;height:2px;border-radius:2px;background:#fff"></i><i style="width:16px;height:2px;border-radius:2px;background:#fff"></i></button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1400px;margin:10px auto 0;padding:10px;border-radius:24px;background:#fff;box-shadow:0 24px 64px rgba(11,27,63,.14);display:flex;flex-direction:column;gap:2px;pointer-events:auto;max-height:calc(100vh - 120px);overflow:auto">
+      <sc-for list="{{ mobileLinks }}" as="m" hint-placeholder-count="10">
+        <a href="{{ m.href }}" style="display:block;padding:12px 16px 12px {{ m.pad }};border-radius:14px;font-size:{{ m.size }};font-weight:{{ m.weight }};line-height:1.35;color:{{ m.color }}" style-hover="background:#EEF7E4;color:#0b0b0c">{{ m.label }}</a>
+      </sc-for>
+    </div>
+  </sc-if>
+</header>
+<section data-screen-label="01 Banner" style="position:relative;min-height:clamp(560px,76vh,760px);display:flex;overflow:hidden;background:#0B1B3F;color:#fff;font-family:'Poppins',sans-serif">
+  <div style="position:absolute;inset:0"><image-slot id="ch-banner" src="media/container-crane.webp" shape="rect" placeholder="Banner image"></image-slot></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(11,11,12,.5) 0%,rgba(11,11,12,.3) 38%,rgba(8,22,60,.85) 100%)"></div>
+  <div style="position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:180px clamp(20px,4vw,56px) clamp(64px,7vw,104px);pointer-events:none">
+    <div style="width:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:28px">
+      <nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:13px;font-weight:500;pointer-events:auto">
+        <a href="index.html" style="color:#fff" style-hover="color:#82C441">Home</a><span style="color:rgba(255,255,255,.6)">/</span>
+        <a href="services.dc.html" style="color:#fff" style-hover="color:#82C441">Services</a><span style="color:rgba(255,255,255,.6)">/</span>
+        <span style="color:#82C441">Container Haulage</span>
+      </nav>
+      <h1 style="max-width:1040px;font-weight:600;font-size:clamp(36px,4.82vw,73px);line-height:1.08;letter-spacing:-0.01em;color:#fff;text-wrap:balance">Container Haulage</h1>
+      <p style="max-width:700px;font-size:16px;line-height:1.65;color:#fff;text-wrap:pretty">Reliable container haulage solutions connecting ports, warehouses, and distribution facilities to support your import, export, and logistics requirements.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Overview" style="padding:clamp(92px,9.6vw,100px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:flex;flex-wrap:wrap;gap:28px clamp(56px,7vw,120px);align-items:flex-start">
+    <div style="flex:1 1 240px"><span style="display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 16px;border-radius:999px;background:#EEF7E4;font-weight:500;font-size:12.5px;color:#0b0b0c"><i style="width:7px;height:7px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%)"></i>Overview</span></div>
+    <p style="flex:3 1 560px;font-weight:500;font-size:clamp(20px,1.9vw,26px);line-height:1.6;letter-spacing:-0.015em;color:#0b0b0c;text-wrap:pretty">Greenway Links provides container haulage to support the inbound and outbound movements of industrial and commercial goods. We help businesses plan container movements between ports, manufacturing sites and storage locations in Malaysia, with arrangements that account for the collection point, receiving site and shipment schedule.</p>
+  </div>
+  <div style="max-width:1400px;margin:clamp(56px,6vw,80px) auto 0;position:relative;height:clamp(320px,36vw,520px);border-radius:28px;overflow:hidden;background:#0B1B3F"><div style="position:absolute;inset:0"><image-slot id="ch-overview" src="media/hero-container.webp" shape="rect" placeholder="Container haulage image"></image-slot></div></div>
+</section>
+
+<section data-screen-label="03 Our services" style="background:#F2F2F2;padding:clamp(92px,9.6vw,100px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto">
+    <h2 style="text-align:center;font-weight:600;font-size:clamp(30.5px,3.78vw,50px);line-height:1.08;letter-spacing:-0.01em;color:#0b0b0c">Our <span style="color:#82C441">services</span></h2>
+    <div style="margin-top:64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:24px">
+      <div style="background:#fff;border-radius:24px;padding:clamp(28px,3vw,48px);display:flex;flex-direction:column;gap:48px;min-height:280px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#0b0b0c;font-weight:600;font-size:13.5px">01</span>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:auto"><h3 style="font-weight:600;font-size:23.5px;line-height:1.25;letter-spacing:-0.01em;color:#0b0b0c">Import &amp; Export Container Haulage</h3><p style="font-size:16px;line-height:1.6;color:#3d3d42;text-wrap:pretty">Coordinated container transportation between ports, warehouses, manufacturing facilities, and distribution centers to support inbound and outbound shipments.</p></div>
+      </div>
+      <div style="background:#fff;border-radius:24px;padding:clamp(28px,3vw,48px);display:flex;flex-direction:column;gap:48px;min-height:280px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#0b0b0c;font-weight:600;font-size:13.5px">02</span>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:auto"><h3 style="font-weight:600;font-size:23.5px;line-height:1.25;letter-spacing:-0.01em;color:#0b0b0c">Inter-Facility Container Transfers</h3><p style="font-size:16px;line-height:1.6;color:#3d3d42;text-wrap:pretty">Reliable container movements between warehouses, distribution centers, and operational sites to meet your storage and logistics requirements.</p></div>
+      </div>
+      <div style="background:#fff;border-radius:24px;padding:clamp(28px,3vw,48px);display:flex;flex-direction:column;gap:48px;min-height:280px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#0b0b0c;font-weight:600;font-size:13.5px">03</span>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:auto"><h3 style="font-weight:600;font-size:23.5px;line-height:1.25;letter-spacing:-0.01em;color:#0b0b0c">Specialised Transport Solutions</h3><p style="font-size:16px;line-height:1.6;color:#3d3d42;text-wrap:pretty">Side-loader and curtain-sider transport options to accommodate different cargo types and handling requirements, with additional transport support through our partner network where needed.</p></div>
+      </div>
+      <div style="background:#fff;border-radius:24px;padding:clamp(28px,3vw,48px);display:flex;flex-direction:column;gap:48px;min-height:280px">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#0b0b0c;font-weight:600;font-size:13.5px">04</span>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-top:auto"><h3 style="font-weight:600;font-size:23.5px;line-height:1.25;letter-spacing:-0.01em;color:#0b0b0c">Container Shunting Services</h3><p style="font-size:16px;line-height:1.6;color:#3d3d42;text-wrap:pretty">Short-distance container movements between operational facilities, loading areas, and storage locations to support daily logistics and handling requirements.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 Our Transport Capabilities" style="padding:clamp(92px,9.6vw,100px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:24px;align-items:stretch">
+    <div style="position:relative;min-height:clamp(360px,34vw,520px);border-radius:28px;overflow:hidden;background:#0B1B3F">
+      <div style="position:absolute;inset:0"><image-slot id="ch-fleet" src="media/orange-truck.webp" shape="rect" placeholder="Prime movers and trailers"></image-slot></div>
+      <div style="position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border-radius:999px;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);pointer-events:none">
+        <img src="media/greenway-mark.webp" alt="" style="width:40px;height:40px;display:block">
+        <span style="font-size:14px;font-weight:500;color:#20366E">Klang Valley &amp; Port Klang</span>
+      </div>
+    </div>
+    <div style="position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(135deg,#20366E 0%,#2B4193 100%);color:#fff;padding:clamp(36px,4.4vw,64px);display:flex;flex-direction:column;justify-content:center;gap:32px">
+      <img src="media/greenway-mark.webp" alt="" style="position:absolute;right:-90px;top:-90px;width:300px;height:300px;opacity:.08;pointer-events:none">
+      <h2 style="position:relative;font-weight:600;font-size:clamp(30.5px,3.4vw,46px);line-height:1.1;letter-spacing:-0.01em;color:#fff;text-wrap:balance">Our Transport <span style="color:#82C441">Capabilities</span></h2>
+      <p style="position:relative;font-size:18px;line-height:1.7;color:#fff;text-wrap:pretty">Our fleet of prime movers and trailers supports 20ft and 40ft container transportation across Klang Valley. We also provide specialised transport equipment, container shunting, and additional transport arrangements through our network to accommodate different cargo types, handling needs, and delivery requirements.</p>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 Related services" style="background:#F2F2F2;padding:clamp(92px,9.6vw,100px) clamp(20px,4vw,56px)">
+  <div style="max-width:1400px;margin:0 auto">
+    <h2 style="font-weight:600;font-size:clamp(30.5px,3.78vw,50px);line-height:1.08;letter-spacing:-0.01em;color:#0b0b0c">Related <span style="color:#82C441">Services</span></h2>
+    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px">
+      <a href="industrial-logistics.dc.html" style="background:#fff;border-radius:24px;padding:clamp(28px,2.6vw,36px);display:flex;flex-direction:column;gap:40px;min-height:220px;color:#0b0b0c;transition:background 200ms,transform 200ms cubic-bezier(.22,.61,.36,1)" style-hover="background:#EEF7E4;transform:translateY(-2px);color:#0b0b0c">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px"><h3 style="font-weight:600;font-size:21px;line-height:1.3;letter-spacing:-0.01em">Industrial Logistics</h3><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></div>
+        <p style="margin-top:auto;font-size:16px;line-height:1.6;color:#3d3d42;text-wrap:pretty">See the wider contract logistics service.</p>
+      </a>
+      <a href="warehousing.dc.html" style="background:#fff;border-radius:24px;padding:clamp(28px,2.6vw,36px);display:flex;flex-direction:column;gap:40px;min-height:220px;color:#0b0b0c;transition:background 200ms,transform 200ms cubic-bezier(.22,.61,.36,1)" style-hover="background:#EEF7E4;transform:translateY(-2px);color:#0b0b0c">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px"><h3 style="font-weight:600;font-size:21px;line-height:1.3;letter-spacing:-0.01em">Warehousing &amp; Storage</h3><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;background:linear-gradient(90deg,#20366E 0%,#2B4193 100%);color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;flex:none"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span></div>
+        <p style="margin-top:auto;font-size:16px;line-height:1.6;color:#3d3d42;text-wrap:pretty">Combine container movements with receiving and storage.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="CTA" style="background:#fff;padding:clamp(92px,9.6vw,100px) clamp(20px,4vw,56px) clamp(92px,9.6vw,100px);font-family:'Poppins',sans-serif">
+  <div style="position:relative;overflow:hidden;max-width:1400px;margin:0 auto;border-radius:32px;background:linear-gradient(135deg,#20366E 0%,#2B4193 100%);padding:clamp(40px,6vw,88px) clamp(28px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:36px clamp(48px,6vw,104px);align-items:center">
+    <img src="media/greenway-mark.webp" alt="" style="position:absolute;right:-110px;bottom:-110px;width:360px;height:360px;opacity:.08;pointer-events:none">
+    <h2 style="position:relative;font-weight:600;font-size:clamp(30.5px,3.4vw,46px);line-height:1.12;letter-spacing:-0.01em;color:#fff;text-wrap:balance">Need to plan a container movement?</h2>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:32px;padding-left:clamp(0px,2.4vw,40px);border-left:2px solid #82C441">
+      <p style="font-size:18px;line-height:1.65;color:#fff;text-wrap:pretty">Share your container size, collection point, delivery site and expected schedule.</p>
+      <a href="contact-us.dc.html?service=Container%20Haulage" style="display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 30px;border-radius:999px;background:linear-gradient(90deg,#82C441 0%,#87DD32 100%);color:#0b0b0c;font-weight:600;font-size:12.5px" style-hover="background:linear-gradient(90deg,#8DCF4B 0%,#95E544 100%);color:#0b0b0c">Request a Haulage Quote</a>
+    </div>
+  </div>
+</section>
+<footer data-screen-label="Footer" style="background:#F2F2F2;padding:clamp(64px,7vw,96px) clamp(20px,4vw,56px) 0;font-family:'Poppins',sans-serif">
+  <div style="max-width:1400px;margin:0 auto">
+    <div style="padding:0 0 clamp(48px,5vw,64px);display:flex;flex-wrap:wrap;justify-content:space-between;gap:48px">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:360px">
+        <a href="index.html" aria-label="Greenway Links" style="display:inline-flex;align-self:flex-start"><img src="media/greenway-logo.webp" alt="Greenway Links" style="height:44px;width:auto;display:block"></a>
+        <p style="font-size:16px;line-height:1.6;color:#5c5c63">Connecting Every Links in Your Supply Chain.</p>
+        <p style="font-size:16px;line-height:1.6;color:#5c5c63">Shah Alam, Selangor, Malaysia<br><a href="mailto:info@gwl.com.my" style="color:#20366E" style-hover="color:#82C441">info@gwl.com.my</a></p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:40px clamp(40px,6vw,96px)">
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:150px">
+          <div style="font-weight:500;font-size:15.5px;color:#0b0b0c">Services</div>
+          <a href="contract-logistics.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Contract Logistics</a>
+          <a href="industrial-logistics.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Industrial Logistics</a>
+          <a href="manufacturing-operations.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Manufacturing Operations &amp; Support</a>
+          <a href="warehousing.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Warehousing &amp; Storage</a>
+          <a href="container-haulage.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Container Haulage</a>
+          <a href="manpower.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Manpower Solutions</a>
+          <a href="fulfilment.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Fulfilment Solutions</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:150px">
+          <div style="font-weight:500;font-size:15.5px;color:#0b0b0c">Company</div>
+          <a href="about-us.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">About Us</a>
+          <a href="contact-us.dc.html" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Contact Us</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;min-width:150px">
+          <div style="font-weight:500;font-size:15.5px;color:#0b0b0c">Legal</div>
+          <a href="#" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Privacy Policy</a>
+          <a href="#" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Terms</a>
+          <a href="#" style="font-size:15.5px;line-height:1.4;color:#5c5c63" style-hover="color:#20366E">Cookies</a>
+        </div>
+      </div>
+    </div>
+    <div style="padding:24px 0 32px;border-top:1px solid #DADDE3;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px;color:#7a7a82">
+      <span>© 2026 Greenway Links Sdn. Bhd.</span>
+      <span>Industrial Logistics &amp; Fulfilment Services</span>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const GL_MENU = [
+  ['Contract Logistics', 'contract-logistics.dc.html', 0],
+  ['Industrial Logistics', 'industrial-logistics.dc.html', 1],
+  ['Manufacturing Operations & Support', 'manufacturing-operations.dc.html', 1],
+  ['Warehousing & Storage', 'warehousing.dc.html', 0],
+  ['Container Haulage', 'container-haulage.dc.html', 0],
+  ['Manpower Solutions', 'manpower.dc.html', 0],
+  ['Fulfilment Solutions', 'fulfilment.dc.html', 0]
+];
+const GL_ACTIVE = 'services', GL_CURRENT = 'container-haulage.dc.html';
+function glHeader(cmp) {
+  const s = cmp.state;
+  const c = k => GL_ACTIVE === k ? '#20366E' : '#141416';
+  const item = ([label, href, lvl]) => ({ label, href, pad: (16 + lvl * 16) + 'px', size: lvl ? '14.5px' : '15.5px', weight: lvl ? 400 : 500, color: href === GL_CURRENT ? '#20366E' : (lvl ? '#5c5c63' : '#141416') });
+  const desktop = s.glW >= 980;
+  const mob = [['Home', 'index.html', 0], ['Services', 'services.dc.html', 0]].concat(GL_MENU.map(m => [m[0], m[1], m[2] + 1]), [['About Us', 'about-us.dc.html', 0], ['Contact Us', 'contact-us.dc.html', 0]]);
+  return {
+    desktop, mobile: !desktop, menuOpen: s.glOpen, mobileOpen: !desktop && s.glMob,
+    homeColor: c('home'), servicesColor: c('services'), aboutColor: c('about'), contactColor: c('contact'),
+    menu: GL_MENU.map(item), mobileLinks: mob.map(item),
+    openMenu: () => cmp.setState({ glOpen: true }), closeMenu: () => cmp.setState({ glOpen: false }),
+    toggleMobile: () => cmp.setState(x => ({ glMob: !x.glMob }))
+  };
+}
+class Component extends DCLogic {
+  state = { glW: typeof window !== 'undefined' ? window.innerWidth : 1400, glOpen: false, glMob: false };
+  componentDidMount() { this.glR = () => this.setState({ glW: window.innerWidth }); window.addEventListener('resize', this.glR); this.glR(); }
+  componentWillUnmount() { window.removeEventListener('resize', this.glR); }
+  renderVals() { return glHeader(this); }
+}
+</script>
+</body>
+</html>
